@@ -5,12 +5,20 @@ function Todo() {
   const [activity, setactivity] = useState("");
   const [listdata, setlistdata] = useState([]);
   function addactivity() {
+    if (activity.trim()=="") {
+      console.log("enter value");
+      
+    }else{
+
     setlistdata((listdata) => {
-      const update = [...listdata, activity];
+      
+      
+        const update = [...listdata, activity];
       console.log(update);
       setactivity("");
       return update;
-    });
+      
+    })};
   }
   function remove(i) {
     const updatelist = listdata.filter((elem, id) => {
